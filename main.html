@@ -1,20 +1,55 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Get And Style All Tags</title>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Click and Drag</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+<body id="getData" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <div class="items">
+        <div draggable="true" ondragstart="drag(event)" class="item item1">01</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item2">02</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item3">03</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item4">04</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item5">05</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item6">06</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item7">07</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item8">08</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item9">09</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item10">10</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item11">11</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item12">12</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item13">13</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item14">14</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item15">15</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item16">16</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item17">17</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item18">18</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item19">19</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item20">20</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item21">21</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item22">22</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item23">23</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item24">24</div>
+    <div draggable="true" ondragstart="drag(event)" class="item item25">25</div>
+  </div>
 
-<body>
-  	<p>[<a href="#" onMouseOver="highlight()" onMouseOut="return_normal()">On mouse over here bold words of the following paragraph will be highlighted</a>]</p> 
-	<p><strong id="bold">AccioJob</strong> is an <strong id="bold">ed-tech startup</strong> run by IIT Delhi Alumni that provides a comprehensive state-of-the-art learning platform for <strong id="bold">Full Stack Web Development</strong>. Our industry-relevant curriculum is taught by top tech instructors and mentors, and our students have gone on to work at leading tech companies like <strong id="bold">Amazon</strong>, <strong id="bold">Salesforce</strong>, and <strong id="bold">Walmart</strong>, among others. With job placement opportunities at <strong id="bold">300+</strong> top tech partner companies, we have placed <strong id="bold">1000+</strong> students in 2022 itself at an average salary of <strong id="bold">8.3 LPA</strong></p>
+<script>
+//Your code goes here 
+	function allowDrop(event){
+		event.preventDefault();
+	}
 
-    <script type="text/javascript" src="./script.js">
+	function drag(event){
+		event.dataTransfer.setData('text',event.target.classList[1]);
+	}
+
+	function drop(event){
+		event.preventDefault();
+		let fetchData = event.dataTransfer.getData('text');
+		event.target.appendChild(document.querySelector(`.${fetchData}`));
+	}
 </script>
 
-</body>
-
+  </body>
 </html>
